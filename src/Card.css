@@ -1,0 +1,18 @@
+.card {
+    background-color: white;
+    border: 5px solid teal;
+    border-radius: 10px;
+    color: teal;
+    margin: 5px;
+    padding: 10px 20px;
+    width: 230px;
+}
+
+.cancel-btn {
+    background-color: teal;
+    border: none;
+    color: white;
+    font-size: 15px;
+    height: 30px;
+    width: 150px;
+}
