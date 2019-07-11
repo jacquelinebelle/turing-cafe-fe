@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getReservations } from './apiCalls';
 import './App.css';
+import CardContainer from './CardContainer';
 
 class App extends Component {
   constructor() {
@@ -15,6 +16,7 @@ class App extends Component {
     try {
       const reservations = await getReservations();
       this.setState({ reservations })
+      console.log(reservations)
     } catch (error) {
       this.setState({ error: error.message })
     }
@@ -28,7 +30,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          
+          <CardContainer reservations={this.state.reservations} />
         </div>
       </div>
     )
