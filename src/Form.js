@@ -44,7 +44,7 @@ class Form extends Component {
                     placeholder='Number of guests'
                     // onChange={}
                 />
-                <button>Make Reservation</button>
+                <button className='form-btn'>Make Reservation</button>
             </form>
         )
     }
