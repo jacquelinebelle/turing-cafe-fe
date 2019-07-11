@@ -1,5 +1,5 @@
 import React from 'react';
-import './CardContainer.scss';
+import './CardContainer.css';
 import Card from './Card';
 
 const CardContainer = ({ reservations }) => {
@@ -8,7 +8,7 @@ const CardContainer = ({ reservations }) => {
     });
 
     return(
-        <main>
+        <main className='container'>
             {displayReservations}
         </main>
     )
