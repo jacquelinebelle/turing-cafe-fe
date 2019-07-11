@@ -11,3 +11,23 @@ export const getReservations = async () => {
     }
 }
 
+export const createReservation = newReservation => {
+    const options = {
+        method: 'POST',
+        header: {
+            'Content-Type': 'Applications/JSON'
+        },
+        body: JSON.stringify({ ...newReservation })
+    } 
+    return fetch('http://localhost:3001/api/v1/reservations', options)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error adding reservation')
+            } else {
+                return response.json()
+            }
+        })
+        .catch (error => {
+            throw new Error(error.message)
+        });
+    }
