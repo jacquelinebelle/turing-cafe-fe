@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getReservations } from './apiCalls';
+import { getReservations, createReservation } from './apiCalls';
 import './App.css';
 import CardContainer from './CardContainer';
 import Form from './Form';
@@ -23,11 +23,10 @@ class App extends Component {
     }
   }
 
-  addReservation = reservation => {
+  addReservation = async reservation => {
     const newReservation = {...reservation, id: Date.now()};
-    const updatedReservations = [...this.state.reservations, newReservation];
-    this.setState({ updatedReservations });
-    console.log(this.state)
+    const reservations = [...this.state.reservations, newReservation];
+    this.setState({ reservations });
   }
 
   render() {
