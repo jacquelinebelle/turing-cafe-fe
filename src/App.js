@@ -23,12 +23,19 @@ class App extends Component {
     }
   }
 
+  addReservation = reservation => {
+    const newReservation = {...reservation, id: Date.now()};
+    const updatedReservations = [...this.state.reservations, newReservation];
+    this.setState({ updatedReservations });
+    console.log(this.state)
+  }
+
   render() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-          <Form />
+          <Form addReservation={this.addReservation} />
         </div>
         <div className='resy-container'>
           <CardContainer reservations={this.state.reservations} />
