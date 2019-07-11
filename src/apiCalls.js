@@ -10,3 +10,4 @@ export const getReservations = async () => {
         throw new Error(error.message);
     }
 }
+

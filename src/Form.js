@@ -17,6 +17,11 @@ class Form extends Component {
         this.setState({ [name]: e.target.value });
     }
 
+    submitForm = (e) => {
+        e.preventDefault();
+        this.props.addReservation(this.state);
+    }
+
     render() {
         const { name, date, time, number } = this.state;
         return (
@@ -49,7 +54,9 @@ class Form extends Component {
                     placeholder='Number of guests'
                     onChange={this.changeStateFromInput} 
                 />
-                <button className='form-btn'>Make Reservation</button>
+                <button className='form-btn' onClick={this.submitForm}>
+                    Make Reservation
+                </button>
             </form>
         )
     }
