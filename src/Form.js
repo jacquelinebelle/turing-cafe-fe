@@ -12,6 +12,11 @@ class Form extends Component {
         }
     }
 
+    changeStateFromInput = (e) => {
+        const { name } = e.target;
+        this.setState({ [name]: e.target.value });
+    }
+
     render() {
         const { name, date, time, number } = this.state;
         return (
@@ -21,28 +26,28 @@ class Form extends Component {
                     name='name' 
                     value={name} 
                     placeholder='Name'
-                    // onChange={} 
+                    onChange={this.changeStateFromInput} 
                 />
                 <input className='date-input'
                     type="text" 
                     name='date' 
                     value={date} 
                     placeholder='Date (mm/dd)'
-                    // onChange={} 
+                    onChange={this.changeStateFromInput} 
                 />
                 <input className='time-input'
                     type="text" 
                     name='time' 
                     value={time} 
                     placeholder='Time'
-                    // onChange={} 
+                    onChange={this.changeStateFromInput} 
                 />
                 <input className='number-input'
                     type="number" 
                     name='number' 
                     value={number} 
                     placeholder='Number of guests'
-                    // onChange={}
+                    onChange={this.changeStateFromInput} 
                 />
                 <button className='form-btn'>Make Reservation</button>
             </form>
